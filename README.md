@@ -89,7 +89,7 @@ Add this to your module's `build.gradle` file (make sure the version matches the
 ```gradle
 dependencies {
     ...
-    compile 'com.github.matecode:DataFragment:1.0.0'
+    compile 'com.github.matecode:DataFragment:1.0.1'
 }
 ```
 
