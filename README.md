@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/matecode/Snacky.svg)](https://jitpack.io/#matecode/DataFragment)
+[![](https://jitpack.io/v/matecode/DataFragment.svg)](https://jitpack.io/#matecode/DataFragment)
 
 # DataFragment
 
