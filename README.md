@@ -13,7 +13,7 @@ If you want to read more about this topic or have no idea what i'm talking about
 
 For that you have to inherit your class from `DataFragmentBase`. That's all.
 
-[Example](https://github.com/matecode/Snacky/blob/master/app/src/main/java/de/mateware/datafragmentample/DataFragment.java)
+[Example](https://github.com/matecode/DataFragment/blob/develop/app/src/main/java/de/mateware/datafragmentsample/DataFragment.java)
 
 Now you can use it in your activity or where ever. You have to possibilities:
 
