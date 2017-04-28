@@ -1,4 +1,5 @@
 [![](https://jitpack.io/v/matecode/DataFragment.svg)](https://jitpack.io/#matecode/DataFragment)
+[![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=9)
 
 # DataFragment
 
@@ -70,6 +71,12 @@ YourDataFragment.`createDataFragment(FragmentManager, YourDataFragment.class, Bu
 YourDataFragment.`retainDataFragment(FragmentManager, YourDataFragment.class)`
 
 They work exactly the same as in the activity chapter.
+
+## Important to know:
+
+:heavy_exclamation_mark: **DataFragment only works with support library fragments !!!**
+
+:heavy_exclamation_mark: **DataFragment uses the (new) [commitNow()](https://developer.android.com/reference/android/support/v4/app/FragmentTransaction.html#commitNow()) to create your data frament, which means its synchronous, but you can use getContext() immediately in your data fragment methods.**
 
 ## Installation
 
