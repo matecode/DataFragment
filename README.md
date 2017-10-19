@@ -41,20 +41,7 @@ then put your DataFrament class in the constructor of the class
 
 and last use your data with the following methods:
 
-`createOrRetainDataFragment()` Creates or retains the dataFrament. After that you have immediat acces with
-
-`getDataFragment()` returns your dataFragment. Now you can manipulate with you own methods.
-
-`createOrRetainDataFragment(Bundle bundle)` The same as above, but with bundle.
-
-`createDataFragment()` Just creates a fragment if there is no fragment yet
-
-`createDataFragment(Bundle)` ... with bundle :)
-
-`retainDataFragment()` just retains your fragment.
-
-The last three ones are especially usefull if you need you own logic of creating and retaining.
-
+`getDataFragment()` returns your dataFragment. If its not existent yet it will be created or retained. Now you can manipulate with you own methods.
 
 #### Static methods (if you can't extends the Activity)
 
@@ -62,15 +49,9 @@ With this approach you have to keep the fragment yourself. You can get it with t
 
 YourDataFragment.`createOrRetainDataFragment(FragmentManager, YourDataFragment.class)`
 
-YourDataFragment.`createOrRetainDataFragment(FragmentManager, YourDataFragment.class, Bundle)`
-
 YourDataFragment.`createDataFragment(FragmentManager, YourDataFragment.class)`
 
-YourDataFragment.`createDataFragment(FragmentManager, YourDataFragment.class, Bundle)`
-
 YourDataFragment.`retainDataFragment(FragmentManager, YourDataFragment.class)`
-
-They work exactly the same as in the activity chapter.
 
 ## Important to know:
 
@@ -96,7 +77,7 @@ Add this to your module's `build.gradle` file (make sure the version matches the
 ```gradle
 dependencies {
     ...
-    compile 'com.github.matecode:DataFragment:1.0.2'
+    compile 'com.github.matecode:DataFragment:1.0.3'
 }
 ```
 

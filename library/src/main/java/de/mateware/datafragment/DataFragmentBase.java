@@ -18,33 +18,20 @@ public abstract class DataFragmentBase extends Fragment {
         setRetainInstance(true);
     }
 
-    public static <DATAFRAGMENT extends DataFragmentBase> DATAFRAGMENT createOrRetainDataFragment(
-            FragmentManager fragmentManager, Class<DATAFRAGMENT> datafragmenttypeClass) {
-        return createOrRetainDataFragment(fragmentManager, datafragmenttypeClass, null);
-    }
-
-    public static <DATAFRAGMENT extends DataFragmentBase> DATAFRAGMENT createOrRetainDataFragment(
-            FragmentManager fragmentManager, Class<DATAFRAGMENT> datafragmenttypeClass, Bundle bundle) {
+    public static <DATAFRAGMENT extends DataFragmentBase> DATAFRAGMENT createOrRetainDataFragment(FragmentManager fragmentManager,
+                                                                                                  Class<DATAFRAGMENT> datafragmenttypeClass) {
         DATAFRAGMENT dataFragment = retainDataFragment(fragmentManager, datafragmenttypeClass);
         if (dataFragment == null) {
-            dataFragment = createDataFragment(fragmentManager, datafragmenttypeClass, bundle);
+            dataFragment = createDataFragment(fragmentManager, datafragmenttypeClass);
         }
         return dataFragment;
     }
 
 
     public static <DATAFRAGMENT extends DataFragmentBase> DATAFRAGMENT createDataFragment(FragmentManager fragmentManager,
-                                                                                                  Class<DATAFRAGMENT> datafragmenttypeClass) {
-        return createDataFragment(fragmentManager, datafragmenttypeClass, null);
-    }
-
-
-    public static <DATAFRAGMENT extends DataFragmentBase> DATAFRAGMENT createDataFragment(FragmentManager fragmentManager,
-                                                                                                  Class<DATAFRAGMENT> datafragmenttypeClass,
-                                                                                                  Bundle bundle) {
+                                                                                          Class<DATAFRAGMENT> datafragmenttypeClass) {
         try {
             DATAFRAGMENT dataFragment = datafragmenttypeClass.newInstance();
-            if (bundle != null) dataFragment.setArguments(bundle);
             fragmentManager.beginTransaction()
                            .add(dataFragment, datafragmenttypeClass.getSimpleName())
                            .commitNow();
@@ -58,9 +45,7 @@ public abstract class DataFragmentBase extends Fragment {
     }
 
     public static <DATAFRAGMENT extends DataFragmentBase> DATAFRAGMENT retainDataFragment(FragmentManager fragmentManager,
-                                                                                                  Class<DATAFRAGMENT> datafragmenttypeClass) {
+                                                                                          Class<DATAFRAGMENT> datafragmenttypeClass) {
         return (DATAFRAGMENT) fragmentManager.findFragmentByTag(datafragmenttypeClass.getSimpleName());
     }
-
-
 }
